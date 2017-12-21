@@ -9,9 +9,9 @@ import java.util.Map;
 public class FolderProcessor implements Runnable {
     private File source;
     private File destination;
-    private char letter;
+    private String letter;
 
-    public FolderProcessor(File source, File destination, char letter) {
+    public FolderProcessor(File source, File destination, String letter) {
         this.source = source;
         this.destination = destination;
         this.letter = letter;

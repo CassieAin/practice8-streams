@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class FileService {
 
-    public static long countLetters(File file, char letter) {
+    public static long countLetters(File file, String letter) {
         List<String> lines = null;
         try {
             lines = Files.readAllLines(file.toPath());
@@ -23,7 +23,7 @@ public class FileService {
         for (String s : lines) {
              words = s.split(" ");
         }
-        return Arrays.stream(words).filter(line -> line.startsWith(letter + "")).count();
+        return Arrays.stream(words).filter(line -> line.startsWith(letter)).count();
     }
 
     public static void writeToFile(Map<String, Long> map, File file) {
