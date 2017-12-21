@@ -30,7 +30,7 @@ public class FileService {
         try {
             FileOutputStream out = new FileOutputStream(file);
             for(Map.Entry<String, Long> entry : map.entrySet()){
-                String resultLine = entry.getKey() + "-" + entry.getValue() + "\n";
+                String resultLine = entry.getKey() + " = " + entry.getValue() + "\n";
                 out.write(resultLine.getBytes());
             }
         } catch (FileNotFoundException e) {

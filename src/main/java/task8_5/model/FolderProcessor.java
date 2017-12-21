@@ -32,7 +32,6 @@ public class FolderProcessor implements Runnable {
                     words.put(file.getName(), count);
             }
         }
-        //write map to file
         if(!words.isEmpty())
             synchronized (destination) {
                 FileService.writeToFile(words, destination);
