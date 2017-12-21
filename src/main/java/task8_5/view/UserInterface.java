@@ -14,9 +14,12 @@ public class UserInterface {
         System.out.println("Input the directory name to read from: ");
         String source = scanner.nextLine();
         File file = new File(source);
-        if(!file.exists()){
-            System.out.println("Wrong input! Please, try again: ");
-            file = new File(source);
+        if(!file.exists() ){
+            System.out.println("Wrong input! This directory doesn't exist or it's empty. Please, try again: ");
+            file = new File(scanner.nextLine());
+        }if(file.list().length < 1){
+            System.out.println("Wrong input! This directory is empty. Please, try again: ");
+            file = new File(scanner.nextLine());
         }
 
         System.out.println("Input the file name to write to: ");
